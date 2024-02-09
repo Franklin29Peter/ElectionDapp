@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voting DAPP</title>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body class="container">
+        <center>
+            <h1>Election Voting DAPP</h1>
+        </center>
+        
+        <!-- User Authentication -->
+        <div id="loginSection">
+            <label for="userAddress">Your Ethereum Address:</label>
+            <input type="text" id="userAddress" />
+            <button onclick="authenticateUser()" class="btn btn-primary">Login</button>
+        </div>
+        
+        <!-- Vote Confirmation Message -->
+        <div id="confirmationMessage" style="display: none;">
+            <p>Thank you for casting your vote!</p>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <!-- <th>Votes</th> -->
+                        <th>Info</th> <!-- Candidate Information -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Franklin</td>
+                        <!-- <td id="candidate-1-votes"></td> -->
+                        <td id="candidate-1-info">He is known for his work in Blockchain</td>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <!-- <td id="candidate-2-votes"></td> -->
+                        <td id="candidate-2-info">He is fond of Football</td>
+                    </tr>
+                    <tr>
+                        <td>Ricky</td>
+                        <!-- <td id="candidate-3-votes"></td> -->
+                        <td id="candidate-3-info">He can make a change in this world</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Input for Voting -->
+        <div id="votingSection" style="display: none;">
+            <label for="candidate">Enter Candidate Name:</label>
+            <input type="text" id="candidate" />
+            <button onclick="voteForCandidate()" class="btn btn-primary">Vote</button>
+        </div>
+
+        <!-- Countdown Timer for Time-Based Voting -->
+        <div id="countdownTimer" style="display: none;">
+            <p>Voting ends in: <span id="timer">HH:MM:SS</span></p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="./index.js"></script>
